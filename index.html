@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Issue Tracker</title>
+    </head>
+
+    <body>
+        <header id="page-header">
+            <h1>Issue Tracker</h1>
+        </header>
+
+        <div class="wrapper">
+            <div id="ticket-panel">
+                <header>
+                    <h2>Add new issue</h2>
+                    <button id="mobile-close-btn" class="close-btn btn">X</button>
+                </header>
+                
+                <div class="form-container">
+                    <form id="ticket-form">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="title" placeholder="Add a descriptive title" autocomplete="off">
+                        <label for="description">Description</label>
+                        <textarea id="description" placeholder="Add a short description"></textarea>
+                        <label for="reporter">Reporter</label>
+                        <input id="reporter" type="text" placeholder="Reporter" autocomplete="off">
+                        <label for="assignee">Assignee</label>
+                        <input id="assignee" type="text" placeholder="Assignee" autocomplete="off">
+                        <label for="priority">Priority</label>
+                        <select id="priority" name="priority">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                        <button class="btn">Add</button>
+                        <div id="msg"></div>
+                    </form>
+
+                    <footer id="ticket-panel-footer">
+                        <p>&copy; Marko Silvasvuori 2021</p>
+                    </footer>
+                </div>
+            </div>
+
+            <div id="ticket-container">
+                <button id="add-btn-mobile" class="btn">Add</button>
+                <div id="tickets"></div>
+                <span id="no-issues-msg">No reported issues</span>
+            </div>
+
+            <div id="modal">
+                <div id="modal-ticket">
+                    <header>
+                        <div class="header-container">
+                            <h3 id="modal-title"></h3>
+                            <p id="modal-description"></p>
+                        </div>
+                        <button class="close-btn btn">X</button>
+                    </header>
+                    <footer>
+                        <div class="ticket-details">
+                            <h4>Created</h4>
+                            <span id="modal-created"></span>
+                        </div>
+                        <div class="ticket-details">
+                            <h4>Reporter</h4>
+                            <span id="modal-reporter"></span>
+                        </div>
+                        <div class="ticket-details">
+                            <h4>Assignee</h4>
+                            <span id="modal-assignee"></span>
+                        </div>
+                        <div class="ticket-details">
+                            <h4>Priority</h4>
+                            <span id="modal-priority"></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
